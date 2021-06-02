@@ -92,7 +92,7 @@ const User = () => {
       setUpdateMode(false);
     }
   };
-  
+
   const handleUploadImage = async (e) => {
     e.preventDefault();
     const file = e.target.files[0];
@@ -101,22 +101,23 @@ const User = () => {
     try {
       if (!file) return toast.error("File does not exist.");
 
-      if (file.type !== "image/*" && file.type !== "image/png")
+      if (file.type !== "image/jpeg" && file.type !== "image/png")
         return toast.error("File must be jpeg or png format.");
 
       let formData = new FormData();
-      formData.append("file", file)
+      formData.append("file", file);
 
       setUploading(true);
-      const { data } = await axios.post(url, formData);
-      setUserProfile(prevState => ({ ...prevState,  }))
-
+      const { data } = await axios.post(url, formData, {
+        headers: { "content-type": "multipart/form-data" },
+      });
+      console.log(data);
+      setUserProfile((prevState) => ({ ...prevState }));
     } catch (error) {
-      console.log('error:', error.message);
+      console.log("error:", error.message);
     } finally {
       setUploading(false);
     }
-
   };
 
   const handleUpdateMode = () => {
@@ -140,8 +141,31 @@ const User = () => {
       <h1 className={styles.title}>User Profile</h1>
       <div className={styles.main}>
         <div className={styles.avatar}>
-          <img src={avatar_url} alt={email} />
-          <AddBoxIcon className={styles.addPhotoIcon} />
+          {session?.user.id === user && (
+            <>
+              <label htmlFor="image_upload" className={styles.addPhotoIcon}>
+                <AddBoxIcon />
+              </label>
+              <input
+                className={styles.fileInput}
+                type="file"
+                name="image_upload"
+                id="image_upload"
+                onChange={handleUploadImage}
+              />
+            </>
+          )}
+          {avatar_url ? (
+            <img
+              src={avatar_url}
+              alt="Image not found, please try uploading again."
+            />
+          ) : (
+            <img
+              src="https://res.cloudinary.com/agomesd/image/upload/v1622663930/patrick-williams-photos/pat-logo_be36j0.jpg"
+              alt="Upload a profile image."
+            />
+          )}
         </div>
         <div className={styles.details}>
           <h3>{email}</h3>

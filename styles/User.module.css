@@ -50,7 +50,7 @@
 .addPhotoIcon:hover {
   opacity: 1;
 }
-  
+
 .details {
   padding: 0 3rem;
   flex: 1;
@@ -121,4 +121,10 @@
 
 .website:hover {
   opacity: 1;
+}
+
+.fileInput {
+  opacity: 0;
+  z-index: -1;
+  position: absolute;
 }
