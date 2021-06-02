@@ -1,6 +1,5 @@
 .container {
   min-height: 100vh;
-  padding: 0 0.5rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -9,12 +8,47 @@
 }
 
 .main {
-  padding: 5rem 0;
-  flex: 1;
+  position: relative;
+  height: 100vh;
+  width: 100%;
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+.backImage {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+  height: 100%;
+  background-image: url('../public/jeremy-vessey-header.jpg');
+  background-size: cover;
+  background-position: -150px 0;
+  background-repeat: no-repeat;
+}
+
+.content {
+  position: absolute;
+  top: 0;
+  right: 0;
+  color: #d3cfcf;
+  height: 100%;
+  width: 50%;
+  z-index: 100;
+  padding: 0 2rem;
+  background: transparent;
+  background: -moz-linear-gradient(left, transparent 0%, #000 25%, #000 100%);
+  background: -webkit-linear-gradient(
+    left,
+    transparent 0%,
+    #000 25%,
+    #000 100%
+  );
+  background: linear-gradient(to right, transparent 0%, #000 25%, #000 100%);
 }
 
 .footer {
@@ -33,31 +67,40 @@
   flex-grow: 1;
 }
 
-.title a {
-  color: #0070f3;
-  text-decoration: none;
-}
-
-.title a:hover,
-.title a:focus,
-.title a:active {
-  text-decoration: underline;
-}
-
 .title {
+  position: relative;
+  top: 4rem;
+  left: -10rem;
   margin: 0;
   line-height: 1.15;
   font-size: 4rem;
-}
-
-.title,
-.description {
-  text-align: center;
+  text-align: left;
 }
 
 .description {
+  position: relative;
+  top: 5rem;
+  left: -6rem;
   line-height: 1.5;
   font-size: 1.5rem;
+  text-align: left;
+  margin: 2rem 0;
+}
+
+.quickLink {
+  color: #fdac53;
+  position: relative;
+  right: -3rem;
+  bottom: -7rem;
+  border: 1px solid #fdac53;
+  padding: 1rem 3rem;
+  font-size: 1.25rem;
+  cursor: pointer;
+}
+
+.quickLink:hover {
+  color: #32d693;
+  border: 1px solid #32d693;
 }
 
 .code {

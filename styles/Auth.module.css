@@ -1,0 +1,134 @@
+.container {
+  height: auto;
+  position: relative;
+  margin: 2rem auto;
+  max-width: 700px;
+  color: #fdac53;
+  z-index: 300;
+  background-color: #1d1c1d;
+  padding: 2rem 2rem;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+}
+
+.main {
+  display: flex;
+}
+
+.left {
+  flex: 0.5;
+  padding-right: 1rem;
+}
+
+
+.right {
+  flex: 0.5;
+  padding-left: 1rem;
+}
+
+.title {
+  color: #32d693;
+  border-bottom: 1px solid #fdac53;
+  padding-bottom: 20px;
+  margin-bottom: 10px;
+}
+
+.form {
+  margin-top: 1rem;
+  position: relative;
+}
+
+.container h4 {
+  padding: 0.25rem 0;
+}
+
+.input {
+  border: none;
+  outline: none;
+  border-bottom: 1px solid #fdac53;
+  color: #fdac53;
+  position: relative;
+  padding: 0.5rem;
+  padding-left: 2.5rem;
+  background-color: transparent;
+  margin: 5px auto;
+  width: 100%;
+  font-size: 1.5rem;
+}
+
+.inputIcon {
+  position: relative;
+  top: -40px;
+  left: 0;
+}
+
+.showPassword {
+  position: relative;
+  top: -45px;
+  left: 250px;
+  cursor: pointer;
+}
+
+.showPassword:hover {
+  color: #32d693;
+}
+
+.forgot {
+  color: #fdac53;
+  margin-top: 1.5rem;
+}
+
+.button {
+  color: #1d1c1d;
+  background-color: #32d693;
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  font-size: 18px;
+  margin: 10px 0;
+  opacity: 0.7;
+  cursor: pointer;
+}
+
+.socialMedia {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1.5rem;
+}
+
+.button:hover {
+  background-color: #3effaf;
+  opacity: 1;
+}
+
+.container p:hover {
+  color: #32d693;
+  cursor: pointer;
+}
+
+.container span {
+  color: #32d693;
+  cursor: pointer;
+  opacity: 0.7;
+}
+
+.container span:hover {
+  color: #3effaf;
+  opacity: 1;
+}
+
+.google {
+  border-bottom: 1px solid #fdac53;
+}
+
+.input:-webkit-autofill,
+.input:-webkit-autofill:hover,
+.input:-webkit-autofill:focus,
+.input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 30px #1d1c1d inset !important;
+  font-size: 1.5rem;
+  -webkit-text-fill-color: #fdac53 !important;
+}
