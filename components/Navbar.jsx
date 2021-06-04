@@ -19,34 +19,34 @@ const Navbar = () => {
         </div>
 
         <ul className={styles.links}>
-          <li className={styles.link}>
-            <Link href="/about">
+          <Link href="/about">
+            <li className={styles.link}>
               <a>about</a>
-            </Link>
-          </li>
+            </li>
+          </Link>
 
-          <li className={styles.link}>
-            <Link href="/blog">
+          <Link href="/blog">
+            <li className={styles.link}>
               <a>blog</a>
-            </Link>
-          </li>
+            </li>
+          </Link>
 
-          <li className={styles.link}>
-            <Link href="/portfolio">
+          <Link href="/portfolio">
+            <li className={styles.link}>
               <a>portfolio</a>
-            </Link>
-          </li>
+            </li>
+          </Link>
 
           {session ? (
             <li className={styles.profileCard}>
               <ProfileCard />
             </li>
           ) : (
-            <li className={`${styles.link} ${styles.signin}`}>
-              <Link href="/auth">
+            <Link href="/auth">
+              <li className={`${styles.link} ${styles.signin}`}>
                 <a>sign in</a>
-              </Link>
-            </li>
+              </li>
+            </Link>
           )}
         </ul>
       </div>

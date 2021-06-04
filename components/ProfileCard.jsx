@@ -26,16 +26,16 @@ const ProfileCard = () => {
 
   return (
     <div className={styles.container}>
-      <Avatar
-        className={styles.avatar}
-        variant="rounded"
-        style={{ backgroundColor: randomColor }}
-        src={session?.user.avatar_url}
-      >
-        <Link href={`/user-profile/${session?.user.id}`}>
+      <Link href={`/user-profile/${session?.user.id}`}>
+        <Avatar
+          className={styles.avatar}
+          variant="rounded"
+          style={{ backgroundColor: randomColor }}
+          src={session?.user.avatar_url}
+        >
           <a>{session?.user.email[0].toUpperCase()}</a>
-        </Link>
-      </Avatar>
+        </Avatar>
+      </Link>
       <div className={styles.signout} onClick={handleSignOut}>
         <p>sign out</p>
       </div>
