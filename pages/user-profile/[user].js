@@ -24,8 +24,8 @@ const User = () => {
   const [updateMode, setUpdateMode] = useState(false);
   const router = useRouter();
   const { session } = useHooks();
-  const { user } = router.query;
   const currentUser = session?.user;
+  const { user } = router.query;
 
   const getProfile = async () => {
     try {

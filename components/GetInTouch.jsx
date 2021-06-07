@@ -7,8 +7,6 @@ const GetInTouch = () => {
   const router = useRouter();
   const currentPath = router.pathname;
 
-  console.log(currentPath);
-
   return (
     <div
       className={currentPath === "/contact" ? styles.hide : styles.container}
