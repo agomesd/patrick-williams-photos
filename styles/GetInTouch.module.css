@@ -1,0 +1,29 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    position: fixed;
+    bottom: 2.20rem;
+    right: 3.5rem;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 400;
+    border-radius: 15px;
+}
+
+.container:hover {
+    background-color: #32d693;
+}
+
+.container:hover .icon {
+    color: rgba(0, 0, 0, .9);
+}
+
+.icon {
+    color: #32d693;
+}
+
+.hide {
+    display: none;
+}
+
