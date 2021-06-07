@@ -4,7 +4,8 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  height: auto;
+  width: 100%;
 }
 
 .main {
@@ -16,6 +17,31 @@
   align-items: center;
 }
 
+.secondary {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  padding: 5rem 2rem;
+  padding-bottom: 1rem;
+  top: -50px;
+  background: -moz-linear-gradient(bottom, transparent 0%, #000 25%, #000 100%);
+  background: -webkit-linear-gradient(
+    bottom,
+    transparent 0%,
+    #000 25%,
+    #000 100%
+  );
+  background: linear-gradient(to bottom, transparent 0%, #000 25%, #000 100%);
+  border-bottom: 1px solid #1d1c1d;
+}
+
+.blogsGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-column-gap: 2rem;
+  width: 100%;
+}
+
 .backImage {
   position: absolute;
   top: 0;
@@ -25,7 +51,7 @@
   align-items: center;
   width: 80%;
   height: 100%;
-  background-image: url('../public/jeremy-vessey-header.jpg');
+  background-image: url("../public/jeremy-vessey-header.jpg");
   background-size: cover;
   background-position: -150px 0;
   background-repeat: no-repeat;
@@ -87,20 +113,31 @@
   margin: 2rem 0;
 }
 
-.quickLink {
+.link {
   color: #fdac53;
-  position: relative;
-  right: -3rem;
-  bottom: -7rem;
   border: 1px solid #fdac53;
   padding: 1rem 3rem;
   font-size: 1.25rem;
   cursor: pointer;
 }
 
-.quickLink:hover {
+.link:hover {
   color: #32d693;
   border: 1px solid #32d693;
+}
+
+.aboutLink {
+  position: relative;
+  right: -3rem;
+  bottom: -7rem;
+}
+
+.blogLink {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: auto;
+  margin: 3rem auto;
 }
 
 .code {

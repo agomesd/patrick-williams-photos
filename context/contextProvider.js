@@ -18,7 +18,10 @@ const ContextProvider = ({ children }) => {
 
   useEffect(() => {
     const getBlogs = async () => {
-      let { data: Blogs, error } = await supabase.from("Blogs").select("*");
+      let { data: Blogs, error } = await supabase
+        .from("blogs")
+        .select("*")
+        .order("created_at", { ascending: false });
       if (error) console.log(error);
       setBlogs(Blogs);
       console.log(Blogs);

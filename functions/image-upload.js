@@ -8,7 +8,7 @@ cloudinary.config({
 
 exports.handler = async (event, context) => {
   const file = event.body;
-  console.log(process.env.CLOUD_API_KEY);
+  // console.log(process.env.CLOUD_NAME);
 
   const res = await cloudinary.uploader.upload(file, {
     folder: "patrick-williams-photos",

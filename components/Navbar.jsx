@@ -25,9 +25,9 @@ const Navbar = () => {
             </li>
           </Link>
 
-          <Link href="/blog">
+          <Link href="/blogs">
             <li className={styles.link}>
-              <a>blog</a>
+              <a>blogs</a>
             </li>
           </Link>
 
