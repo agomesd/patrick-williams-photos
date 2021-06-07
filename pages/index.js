@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { supabase } from "../utils/initSupabase";
 import Link from "next/link";
 import BlogCard from "../components/BlogCard";
+import ImageCard from "../components/ImageCard";
 import styles from "../styles/Home.module.css";
 
 const Index = () => {
@@ -34,10 +35,10 @@ const Index = () => {
 
   return (
     <div className={styles.container}>
-      <div className={styles.main}>
+      <div className={styles.about}>
         <div className={styles.backImage}></div>
         <div className={styles.content}>
-          <h2 className={styles.title}>Patrick Williams Photography</h2>
+          <h2 className={`${styles.title} ${styles.heading}`}>Patrick Williams Photography</h2>
           <p className={styles.description}>
             Bacon ipsum dolor amet turducken corned beef cupim, boudin
             prosciutto spare ribs pork andouille landjaeger ribeye.
@@ -47,7 +48,7 @@ const Index = () => {
           </Link>
         </div>
       </div>
-      <div className={styles.secondary}>
+      <div className={styles.blogs}>
         <div className={styles.blogsGrid}>
           <BlogCard data={blogs[0]} loading={loading} />
           <BlogCard data={blogs[1]} loading={loading} />
@@ -55,6 +56,19 @@ const Index = () => {
         </div>
         <Link href='/blogs'>
           <a className={`${styles.blogLink} ${styles.link}`}>All Blog Posts</a>
+        </Link>
+      </div>
+      <div className={styles.portfolio}>
+        <h1 className={styles.title}>
+          Portfolio
+        </h1>
+        <div className={styles.slideshow}>
+          <ImageCard data={blogs[0]}/>
+          <ImageCard data={blogs[1]}/>
+          <ImageCard data={blogs[2]}/>
+        </div>
+        <Link href='/portfolio'>
+          <a className={`${styles.blogLink} ${styles.link}`}>Portfolio</a>
         </Link>
       </div>
     </div>

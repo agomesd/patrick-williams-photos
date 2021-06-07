@@ -1,0 +1,12 @@
+.container {
+  height: 400px;
+  margin: 1rem 1rem;
+  border-radius: 6px;
+}
+
+.container img {
+  object-fit: contain;
+  height: 100%;
+  width: auto;
+  border-radius: 6px;
+}

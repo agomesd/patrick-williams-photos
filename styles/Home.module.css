@@ -8,7 +8,7 @@
   width: 100%;
 }
 
-.main {
+.about {
   position: relative;
   height: 100vh;
   width: 100%;
@@ -17,7 +17,7 @@
   align-items: center;
 }
 
-.secondary {
+.blogs {
   display: flex;
   flex-direction: column;
   position: relative;
@@ -93,11 +93,15 @@
   flex-grow: 1;
 }
 
-.title {
+.heading {
   position: relative;
   top: 4rem;
   left: -10rem;
-  margin: 0;
+}
+
+.title {
+  margin: 0 2rem;
+  margin-bottom: 2rem;
   line-height: 1.15;
   font-size: 4rem;
   text-align: left;
@@ -186,6 +190,19 @@
   margin: 0;
   font-size: 1.25rem;
   line-height: 1.5;
+}
+
+.portfolio {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-bottom: 8rem;
+}
+
+.slideshow {
+  display: flex;
+  overflow-x: auto;
+  border: 1px solid #1d1c1d;
 }
 
 .logo {
