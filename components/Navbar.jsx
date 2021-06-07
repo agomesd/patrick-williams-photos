@@ -1,8 +1,8 @@
 import React from "react";
 import Link from "next/link";
-import styles from "../styles/Navbar.module.css";
 import useHooks from "../hooks/useHooks";
 import ProfileCard from "./ProfileCard";
+import styles from "../styles/components/Navbar.module.css";
 
 const Navbar = () => {
   const { session } = useHooks();

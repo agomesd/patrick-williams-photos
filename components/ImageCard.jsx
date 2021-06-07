@@ -1,4 +1,4 @@
-import styles from '../styles/ImageCard.module.css';
+import styles from '../styles/components/ImageCard.module.css';
 
 const ImageCard = ({ data }) => {
     return (

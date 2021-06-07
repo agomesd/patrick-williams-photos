@@ -3,6 +3,7 @@
   padding: 0.5rem;
   background-color: rgba(0, 0, 0, 0.95);
   border-bottom: 1px solid #1d1c1d;
+  z-index: 200;
 }
 
 .container {

@@ -6,7 +6,7 @@ import ExitToAppIcon from "@material-ui/icons/ExitToApp";
 import randomColorGenerator from "../utils/randomColorGenerator";
 import useHooks from "../hooks/useHooks";
 
-import styles from "../styles/ProfileCard.module.css";
+import styles from "../styles/components/ProfileCard.module.css";
 
 const ProfileCard = () => {
   const { signOut, session } = useHooks();

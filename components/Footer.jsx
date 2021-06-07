@@ -2,7 +2,7 @@ import InstagramIcon from "@material-ui/icons/Instagram";
 import FacebookIcon from "@material-ui/icons/Facebook";
 import MailOutlineIcon from "@material-ui/icons/MailOutline";
 
-import styles from "../styles/Footer.module.css";
+import styles from "../styles/components/Footer.module.css";
 
 const Footer = () => {
   const handleScrollToTop = () => {

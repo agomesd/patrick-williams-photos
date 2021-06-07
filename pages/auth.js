@@ -1,5 +1,5 @@
 import { useState } from "react";
-import styles from "../styles/Auth.module.css";
+import styles from "../styles/pages/Auth.module.css";
 import { FiMail, FiLock } from "react-icons/fi";
 import { MdVisibilityOff, MdVisibility } from "react-icons/md";
 import useHooks from "../hooks/useHooks";

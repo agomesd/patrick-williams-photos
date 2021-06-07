@@ -1,0 +1,18 @@
+.container {
+  position: relative;
+  padding: 2rem;
+  background-image: url("https://res.cloudinary.com/agomesd/image/upload/v1608576829/samples/people/kitchen-bar.jpg");
+}
+
+.heading {
+  
+}
+
+.content {
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 33%;
+  padding: 1rem 2rem;
+  border-radius: 16px;
+}
+
+

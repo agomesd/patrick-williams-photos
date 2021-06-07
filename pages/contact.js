@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
-import axios from "axios";
 import useHooks from "../hooks/useHooks";
-import styles from "../styles/Contact.module.css";
+import styles from "../styles/pages/Contact.module.css";
 
 const initialState = {
   name: "",
@@ -18,14 +17,6 @@ const Contact = () => {
   const handleChange = (e) => {
     const input = e.target;
     setFormData((prevState) => ({ ...prevState, [input.name]: input.value }));
-  };
-
-  const encode = (data) => {
-    return Object.keys(data)
-      .map(
-        (key) => encodeURIComponent(key) + "=" + encodeURIComponent(data[key])
-      )
-      .join("&");
   };
 
   useEffect(() => {

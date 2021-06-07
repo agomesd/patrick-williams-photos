@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { supabase } from "../utils/initSupabase";
 
-import styles from "../styles/Avatar.module.css";
+import styles from "../styles/components/Avatar.module.css";
 
 const Avatar = ({ url, size, alt, loading, uploading }) => {
   const [avatarUrl, setAvatarUrl] = useState(null);

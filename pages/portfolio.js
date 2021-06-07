@@ -1,4 +1,4 @@
-import styles from '../styles/Portfolio.module.css';
+import styles from '../styles/pages/Portfolio.module.css';
 
 const Portfolio = () => {
     return (

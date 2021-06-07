@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
 
-import styles from "../styles/BlogCard.module.css";
+import styles from "../styles/components/BlogCard.module.css";
 
 const BlogCard = ({ data, loading }) => {
   const router = useRouter();

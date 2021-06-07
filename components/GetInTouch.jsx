@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
 import MailOutlineIcon from "@material-ui/icons/MailOutline";
-import styles from "../styles/GetInTouch.module.css";
+import styles from "../styles/components/GetInTouch.module.css";
 
 const GetInTouch = () => {
   const router = useRouter();

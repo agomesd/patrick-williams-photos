@@ -1,6 +1,6 @@
-import styles from "../styles/Blogs.module.css";
 import useHooks from "../hooks/useHooks";
 import BlogCard from '../components/BlogCard';
+import styles from "../styles/pages/Blogs.module.css";
 
 const Blogs = () => {
   const { blogs } = useHooks();

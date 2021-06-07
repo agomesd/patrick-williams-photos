@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import styles from "../../styles/User.module.css";
 import { useRouter } from "next/router";
 import useHooks from "../../hooks/useHooks";
 import { supabase } from "../../utils/initSupabase";
@@ -7,6 +6,7 @@ import OpenInNewIcon from "@material-ui/icons/OpenInNew";
 import AddBoxIcon from "@material-ui/icons/AddBox";
 import axios from "axios";
 import { toast } from "react-toastify";
+import styles from "../../styles/pages/User.module.css";
 
 const initialState = {
   username: "",

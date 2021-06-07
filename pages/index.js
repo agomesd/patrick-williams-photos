@@ -4,7 +4,6 @@ import Link from "next/link";
 import BlogCard from "../components/BlogCard";
 import ImageCard from "../components/ImageCard";
 import styles from "../styles/Home.module.css";
-import Footer from "../components/Footer";
 
 const Index = () => {
   const [loading, setLoading] = useState(false);
@@ -72,7 +71,6 @@ const Index = () => {
           <a className={`${styles.blogLink} ${styles.link}`}>Portfolio</a>
         </Link>
       </div>
-      <Footer />
     </div>
   );
 };
