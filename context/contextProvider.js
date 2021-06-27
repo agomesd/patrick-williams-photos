@@ -5,7 +5,9 @@ export const Context = createContext();
 
 const ContextProvider = ({ children }) => {
   const [blogs, setBlogs] = useState([]);
-  const [session, setSession] = useState();
+  const [session, setSession] = useState(null);
+  const [loading, setLoading] = useState(false);
+  const [currentProfile, setCurrentProfile] = useState(null);
 
   useEffect(() => {
     setSession(supabase.auth.session());
@@ -24,10 +26,29 @@ const ContextProvider = ({ children }) => {
         .order("created_at", { ascending: false });
       if (error) console.log(error);
       setBlogs(Blogs);
-      console.log(Blogs);
     };
     getBlogs();
   }, []);
+
+  useEffect(() => {
+    const getProfile = async () => {
+      setLoading(true);
+      try {
+        let { data, error } = await supabase
+          .from("profiles")
+          .select("*")
+          .eq("userId", session?.user.id)
+          .single();
+        if (error) console.log(error.message);
+        setCurrentProfile(data);
+      } catch (error) {
+        console.log("error: ", error.message);
+      } finally {
+        setLoading(false);
+      }
+    };
+    getProfile();
+  });
 
   const signUp = (email, password) => {
     return supabase.auth.signUp({ email, password });
@@ -51,6 +72,9 @@ const ContextProvider = ({ children }) => {
     signIn,
     signOut,
     createProfile,
+    currentProfile,
+    loading,
+    setLoading,
     session,
   };
 

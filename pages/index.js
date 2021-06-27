@@ -1,37 +1,10 @@
-import { useEffect, useState } from "react";
 import { supabase } from "../utils/initSupabase";
 import Link from "next/link";
 import BlogCard from "../components/BlogCard";
 import ImageCard from "../components/ImageCard";
 import styles from "../styles/Home.module.css";
 
-const Index = () => {
-  const [loading, setLoading] = useState(false);
-  const [blogs, setBlogs] = useState([]);
-
-  const getBlogs = async () => {
-    try {
-      setLoading(true);
-
-      let { data, error } = await supabase
-        .from("blogs")
-        .select("*")
-        .order("id", { ascending: false })
-        .limit(3);
-
-      if (error) console.log(error.message);
-
-      setBlogs(data);
-    } catch (error) {
-      console.log("error: ", error.message);
-    } finally {
-      setLoading(false);
-    }
-  };
-
-  useEffect(() => {
-    getBlogs();
-  }, []);
+const Index = ({ images, blogs, imagesError, blogsError }) => {
 
   return (
     <div className={styles.container}>
@@ -52,9 +25,10 @@ const Index = () => {
       </div>
       <div className={styles.blogs}>
         <div className={styles.blogsGrid}>
-          <BlogCard data={blogs[0]} loading={loading} />
-          <BlogCard data={blogs[1]} loading={loading} />
-          <BlogCard data={blogs[2]} loading={loading} />
+          {blogsError && console.log(blogsError.message)}
+          {blogs?.map((blog) => (
+            <BlogCard data={blog} key={blog.id} />
+          ))}
         </div>
         <Link href="/blogs">
           <a className={`${styles.blogLink} ${styles.link}`}>All Blog Posts</a>
@@ -63,9 +37,10 @@ const Index = () => {
       <div className={styles.portfolio}>
         <h1 className={styles.title}>Portfolio</h1>
         <div className={styles.slideshow}>
-          <ImageCard data={blogs[0]} />
-          <ImageCard data={blogs[1]} />
-          <ImageCard data={blogs[2]} />
+          {imagesError && console.log(imagesError.message)}
+          {images?.map((image) => (
+            <ImageCard data={image} key={image.key} />
+          ))}
         </div>
         <Link href="/portfolio">
           <a className={`${styles.blogLink} ${styles.link}`}>Portfolio</a>
@@ -73,6 +48,24 @@ const Index = () => {
       </div>
     </div>
   );
+};
+
+export const getStaticProps = async () => {
+  const { data: images, error: imagesError } = await supabase
+    .from("images")
+    .select("*")
+    .order("created_at", { ascending: false })
+    .limit(25);
+
+  const { data: blogs, error: blogsError } = await supabase
+    .from("blogs")
+    .select("*")
+    .order("created_at", { ascending: false })
+    .limit(3);
+
+  return {
+    props: { images, blogs, imagesError, blogsError },
+  };
 };
 
 export default Index;

@@ -1,0 +1,14 @@
+.container {
+    padding: 2rem;
+    width: 100%;
+}
+
+.header {
+    margin-left: 1rem;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 0.5rem  1rem;
+}

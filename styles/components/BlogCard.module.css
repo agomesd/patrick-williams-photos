@@ -1,10 +1,10 @@
 .container {
+    position: relative;
     background-color: transparent;
     border: 1px solid #1d1c1d;
     width: 100%;
     padding: 2rem;
     border-radius: 6px;
-    cursor: pointer;
     opacity: 0.7;
     text-align: left;
 }
@@ -20,6 +20,7 @@
     max-height: 300px;
     border-radius: 6px;
     overflow: hidden; 
+    cursor: pointer;
 }
 
 .image img {
@@ -34,6 +35,7 @@
     border-bottom: 1px solid #1d1c1d;
     padding-bottom: 1rem;
     margin-bottom: 0.5rem;
+    cursor: pointer;
 }
 
 .date {
@@ -42,6 +44,7 @@
 
 .link {
     color: #fdac53;
+    cursor: pointer;
 }
 
 .container:hover .link {
@@ -51,3 +54,29 @@
 .loading {
     color: #fdac53;
 }
+
+.iconBox {
+    position: absolute;
+    bottom: 1rem;
+    right: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1rem;
+}
+
+.icon {
+    color: #fdac53;
+    margin-right: 1rem;
+    cursor: pointer;
+}
+
+.favoriteIcon {
+    color: tomato !important;
+}
+
+.counter {
+    color: #d3cfcf;
+    margin-right: 0.5rem;
+}
+

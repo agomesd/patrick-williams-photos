@@ -1,12 +1,51 @@
 .container {
+  position: relative;
   height: 400px;
   margin: 1rem 1rem;
   border-radius: 6px;
+  min-width: 300px;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.container:hover {
+  transform: scale(1.03);
+  transition: transform 0.2s ease-out;
 }
 
 .container img {
-  object-fit: contain;
+  object-fit: cover;
   height: 100%;
-  width: auto;
+  width: 100%;
   border-radius: 6px;
+  object-position: center;
+}
+
+.hideOptions {
+  display: none;
+}
+
+.showCaption {
+  position: absolute;
+  top: 0.25rem;
+  left: 0.5rem;
+  padding: 0.5rem 1rem;
+  background-color: rgba(0, 0, 0, 0.75);
+  border-radius: 6px;
+}
+
+.showOptions {
+  display: flex;
+  position: absolute;
+  bottom: 0.5rem;
+  right: 0.5rem;
+  padding: 0.5rem;
+  background-color: rgba(0, 0, 0, 0.75);
+  border-radius: 6px;
+  transition: display 0.2s ease-in;
+}
+
+.icon {
+  color: #d3cfcf;
+  margin: 0 0.5rem;
 }
